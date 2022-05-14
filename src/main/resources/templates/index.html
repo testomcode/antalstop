@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus stops per line</title>
+    <style>
+    .headerDiv {
+      background-color: lightgrey;
+      text-align: center;
+      font-family: Verdana;
+    }
+    .testDiv {
+      background-color: lightgrey;
+      font-family: Verdana;
+    }
+  </style>
+</head>
+<body>
+<div class="headerDiv">
+    <p>Top 10 bus lines with most stops</p>
+</div>
+<dl class="testDiv" th:each="line : ${lines}">
+    <dt><span th:text="'Linje: ' + ${line.lineNumber}"/></dt>
+    <dd th:each="stop : ${line.stopNames}"><span th:text="'Hållplats: ' + ${stop}"/></dd>
+</dl>
+</body>
+</html>
