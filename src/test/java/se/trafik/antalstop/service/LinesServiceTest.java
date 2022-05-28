@@ -36,7 +36,7 @@ class LinesServiceTest {
 
         JourneyPatternPointOnLineDto journeyPatternPointOnLineDto6 = createJourneyPatternPointOnLineDto(3, 30);
 
-        JourneyPatternPointOnLineResponseDataDto journeyPatternPointOnLineResponseDataDto = new JourneyPatternPointOnLineResponseDataDto();
+        ResponseDataDto<JourneyPatternPointOnLineDto> journeyPatternPointOnLineResponseDataDto = new ResponseDataDto<>();
         journeyPatternPointOnLineResponseDataDto.setResult(List.of(journeyPatternPointOnLineDto1,
                 journeyPatternPointOnLineDto6,
                 journeyPatternPointOnLineDto2,
@@ -44,7 +44,7 @@ class LinesServiceTest {
                 journeyPatternPointOnLineDto5,
                 journeyPatternPointOnLineDto4));
 
-        JourneyPatternPointOnLineModelDto journeyPatternPointOnLineModelDto = new JourneyPatternPointOnLineModelDto();
+        ModelDto<JourneyPatternPointOnLineDto> journeyPatternPointOnLineModelDto = new ModelDto<>();
         journeyPatternPointOnLineModelDto.setResponseData(journeyPatternPointOnLineResponseDataDto);
 
         StopPointDto stopPointDto1 = createStopPointDto(10, "TEN");
@@ -59,7 +59,7 @@ class LinesServiceTest {
 
         StopPointDto stopPointDto6 = createStopPointDto(30, "THIRTY");
 
-        StopPointResponseDataDto stopPointResponseDataDto = new StopPointResponseDataDto();
+        ResponseDataDto<StopPointDto> stopPointResponseDataDto = new ResponseDataDto<>();
         stopPointResponseDataDto.setResult(List.of(stopPointDto6,
                 stopPointDto3,
                 stopPointDto5,
@@ -67,7 +67,7 @@ class LinesServiceTest {
                 stopPointDto1,
                 stopPointDto2));
 
-        StopPointModelDto stopPointModelDto = new StopPointModelDto();
+        ModelDto<StopPointDto> stopPointModelDto = new ModelDto<>();
         stopPointModelDto.setResponseData(stopPointResponseDataDto);
 
         when(dataRepository.getJourneyPatternPointOnLineModelDto()).thenReturn(journeyPatternPointOnLineModelDto);

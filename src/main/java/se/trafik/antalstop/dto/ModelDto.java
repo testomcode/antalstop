@@ -2,7 +2,8 @@ package se.trafik.antalstop.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class StopPointModelDto {
+public class ModelDto<T> {
+
     @JsonProperty("StatusCode")
     private Integer statusCode;
 
@@ -13,9 +14,9 @@ public class StopPointModelDto {
     private Integer executionTime;
 
     @JsonProperty("ResponseData")
-    private StopPointResponseDataDto responseData;
+    private ResponseDataDto<T> responseData;
 
-    public StopPointModelDto() {
+    public ModelDto() {
     }
 
     public Integer getStatusCode() {
@@ -42,21 +43,11 @@ public class StopPointModelDto {
         this.executionTime = executionTime;
     }
 
-    public StopPointResponseDataDto getResponseData() {
+    public ResponseDataDto<T> getResponseData() {
         return responseData;
     }
 
-    public void setResponseData(StopPointResponseDataDto responseData) {
+    public void setResponseData(ResponseDataDto<T> responseData) {
         this.responseData = responseData;
-    }
-
-    @Override
-    public String toString() {
-        return "StopPointModelDto{" +
-                "statusCode=" + statusCode +
-                ", message='" + message + '\'' +
-                ", executionTime=" + executionTime +
-                ", responseData=" + responseData +
-                '}';
     }
 }

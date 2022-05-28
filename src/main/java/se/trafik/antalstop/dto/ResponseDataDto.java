@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class JourneyPatternPointOnLineResponseDataDto {
+public class ResponseDataDto <T>{
     @JsonProperty("Version")
     private String version;
 
@@ -12,9 +12,9 @@ public class JourneyPatternPointOnLineResponseDataDto {
     private String type;
 
     @JsonProperty("Result")
-    private List<JourneyPatternPointOnLineDto> result;
+    private List<T> result;
 
-    public JourneyPatternPointOnLineResponseDataDto() {
+    public ResponseDataDto() {
     }
 
     public String getVersion() {
@@ -33,20 +33,11 @@ public class JourneyPatternPointOnLineResponseDataDto {
         this.type = type;
     }
 
-    public List<JourneyPatternPointOnLineDto> getResult() {
+    public List<T> getResult() {
         return result;
     }
 
-    public void setResult(List<JourneyPatternPointOnLineDto> result) {
+    public void setResult(List<T> result) {
         this.result = result;
-    }
-
-    @Override
-    public String toString() {
-        return "JourneyPatternPointOnLineResponseDataDto{" +
-                "version='" + version + '\'' +
-                ", type='" + type + '\'' +
-                ", result=" + result +
-                '}';
     }
 }
